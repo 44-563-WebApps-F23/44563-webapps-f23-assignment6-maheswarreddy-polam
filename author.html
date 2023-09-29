@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Author's World</title>
+ </head>
+<body>
+
+<h1>Author entry Maheswar Reddy Polam</h1>
+ <form>
+        <label for="password">The hidden author name</label><br>
+        <input type="password" id="password" value= "Dickens" name="password">
+        <br>
+        <label for="guessAuthorname">Guess the author:</label>
+        <input type="text" id="guessAuthor" name="guessAuthor" required>
+        <br/>
+        <input  type="button" onclick= "checkAuthor()" value="Check the guess">
+      </form>
+      <p id="goodCounter"></p>
+      <p id="oopsCounter"></p>
+</body>
+<script>
+var good = 0;
+var oops = 0;
+function checkAuthor() {
+    console.log("fff");
+    var authorPassword = document.getElementById("password").value;
+    var authorCheck = document.getElementById("guessAuthor").value;
+    if (authorPassword == authorCheck) {
+        good++;
+        alert("You got it right");
+    } else {
+        oops++;
+        alert("Sorry");  
+    }
+    document.getElementById("goodCounter").innerHTML = good;
+    document.getElementById("oopsCounter").innerHTML = oops;
+}
+</script>
+
+
+
+</body>
+</html> 
