@@ -12,106 +12,91 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
       <style>
-        .author{
-            width: 50%;
-           margin-left: 20px;
-        }
+        .mumimg{
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+    }
         .border{
             border-radius: 50px 20px;
         }
+        .contain{
+        width: 90%;
+        margin: 0px auto;
+    }
     </style>
  </head>
 <body>
 
-<h1>Author entry Maheswar Reddy Polam</h1>
-<div class="author">
-<form>
-    <label for="password">The hidden author name</label><br>
-    <input type="password" id="password" class="border" value= "Dickens" name="password">
-    <br>
-    <label for="guessAuthorname">Guess the author:</label><br>
-    <input type="text" id="guessAuthor" class="border" name="guessAuthor" required>
-    <br> <br>
-    <input  type="button" class="btn btn-success" onclick= "checkAuthor()" value="Check the guess">
-  </form>
-  <p id="goodCounter"></p>
-  <p id="oopsCounter"></p>
-</body>
-<script>
-var good = 0;
-var oops = 0;
-function checkAuthor() {
-console.log("fff");
-var authorPassword = document.getElementById("password").value;
-var authorCheck = document.getElementById("guessAuthor").value;
-if (authorPassword == authorCheck) {
-    good++;
-    alert("You got it right");
-} else {
-    oops++;
-    alert("Sorry");  
-}
-document.getElementById("goodCounter").innerHTML = good;
-document.getElementById("oopsCounter").innerHTML = oops;
-}
-</script>
-
-<div>
-    <img id="cityImage" src="./images/mumbai1.webp" alt="City Img"
-     width="100" height="100" onclick="selectImage()">
-</div>
-
-<script>
-  
+    <div class="contain">
+        <h1>Author entry Maheswar Reddy Polam</h1>
+        <form>
+            <div class="form-group">
+                <label for="password">The hidden author name</label><br>
+                <input class="form-control border" type="password" id="password" value= "Dickens" name="password">
+            </div>
+           <div class="form-group">
+            <label for="guessAuthorname">Guess the author:</label><br>
+            <input class="form-control border" type="text" id="guessAuthor" name="guessAuthor" required>
+           </div><br/>
+           <div class="form-group">
+            <button type="button" class="btn btn-success" id="authorBtn" onclick= "checkAuthor()" >Check the guess</button>
+           </div>
+          </form>
+          <p id="goodCounter"></p>
+          <p id="oopsCounter"></p>
+          <div class="img-container">
+                <img id="display" onclick="selectImage()" src="./images/mumbai1.webp" alt="Displaying mumbai image" class="mumimg"/>
+          </div>
+        </div>
+    </body>
+    <script>
+    
     var useImage = 1;
-    function selectImage() {
-        var imageElement = document.getElementById('cityImage');
+    function selectImage(){
+        var img1 = document.getElementById("display");
         switch (useImage) {
             case 1:
-                imageElement.src = "./images/agra1.webp";
-                useImage = 2;
-                break;
-            case 2:
-                imageElement.src = "./images/lucknow1.webp"; 
-                useImage = 3;
-                break;
-            case 3:
-                imageElement.src = "./images/mumbai1.webp"; 
-                useImage = 1; 
-                break;
-            default:
-                break;
+            img1.src = "./images/agra1.webp";
+            useImage = 2;
+            break;
+            case 2 : 
+            img1.src = "./images/lucknow1.webp" ;
+            useImage = 3;
+            break;
+            case 3 : 
+            img1.src = "./images/mumbai1.webp" ;
+            useImage = 1;
+            break;
         }
     }
-    selectImage();
+
 
     var good = 0;
-var oops = 0;
-function checkAuthor() {
-    var authorPassword = document.getElementById("password").value;
-    var authorCheck = document.getElementById("guessAuthor").value;
-    if (authorPassword == authorCheck) {
-        good++;
-        alert("You got it right");
-    } else {
-        oops++;
-        alert("Sorry");  
-    }
-
-    if (oops > 6 ) {
-        let authButton = document.getElementById('authorBtn');
-        authButton.onclick = errorMsg ;
-    }
+    var oops = 0;
+    function checkAuthor() {
+        var authorPassword = document.getElementById("password").value;
+        var authorCheck = document.getElementById("guessAuthor").value;
+        if (authorPassword == authorCheck) {
+            good++;
+            alert("You got it right");
+        } else {
+            oops++;
+            alert("Sorry");  
+        }
     
-    document.getElementById("goodCounter").innerHTML = `Good count : ${good}`;
-    document.getElementById("oopsCounter").innerHTML = `Opps count : ${oops}`;
-    
-  
-}
-function errorMsg() {
-    alert("Sorry, ran out of guesses");
-}
-</script>
-
-</body>
+        if (oops > 6 ) {
+            let authButton = document.getElementById('authorBtn');
+            authButton.onclick = errorMsg ;
+        }
+        
+        document.getElementById("goodCounter").innerHTML = `Good count : ${good}`;
+        document.getElementById("oopsCounter").innerHTML = `Opps count : ${oops}`;
+        
+      
+    }
+    function errorMsg() {
+        alert("Sorry, ran out of guesses");
+    }
+    </script>
 </html> 
