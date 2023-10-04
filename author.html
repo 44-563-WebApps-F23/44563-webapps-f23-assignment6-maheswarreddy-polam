@@ -33,11 +33,11 @@
         <form>
             <div class="form-group">
                 <label for="password">The hidden author name</label><br>
-                <input class="form-control border" type="password" id="password" value= "Dickens" name="password">
+                <input class="form-control border border border-dark" type="password" id="password" value= "Dickens" name="password">
             </div>
            <div class="form-group">
             <label for="guessAuthorname">Guess the author:</label><br>
-            <input class="form-control border" type="text" id="guessAuthor" name="guessAuthor" required>
+            <input class="form-control border border border-dark" type="text" id="guessAuthor" name="guessAuthor" required>
            </div><br/>
            <div class="form-group">
             <button type="button" class="btn btn-success" id="authorBtn" onclick= "checkAuthor()" >Check the guess</button>
@@ -92,8 +92,8 @@
         
         document.getElementById("goodCounter").innerHTML = `Good count : ${good}`;
         document.getElementById("oopsCounter").innerHTML = `Opps count : ${oops}`;
-        
-      
+
+
     }
     function errorMsg() {
         alert("Sorry, ran out of guesses");
