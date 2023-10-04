@@ -31,7 +31,7 @@
     <br>
     <label for="guessAuthorname">Guess the author:</label><br>
     <input type="text" id="guessAuthor" class="border" name="guessAuthor" required>
-    <br>
+    <br> <br>
     <input  type="button" class="btn btn-success" onclick= "checkAuthor()" value="Check the guess">
   </form>
   <p id="goodCounter"></p>
@@ -84,6 +84,33 @@ document.getElementById("oopsCounter").innerHTML = oops;
         }
     }
     selectImage();
+
+    var good = 0;
+var oops = 0;
+function checkAuthor() {
+    var authorPassword = document.getElementById("password").value;
+    var authorCheck = document.getElementById("guessAuthor").value;
+    if (authorPassword == authorCheck) {
+        good++;
+        alert("You got it right");
+    } else {
+        oops++;
+        alert("Sorry");  
+    }
+
+    if (oops > 6 ) {
+        let authButton = document.getElementById('authorBtn');
+        authButton.onclick = errorMsg ;
+    }
+    
+    document.getElementById("goodCounter").innerHTML = `Good count : ${good}`;
+    document.getElementById("oopsCounter").innerHTML = `Opps count : ${oops}`;
+    
+  
+}
+function errorMsg() {
+    alert("Sorry, ran out of guesses");
+}
 </script>
 
 </body>
