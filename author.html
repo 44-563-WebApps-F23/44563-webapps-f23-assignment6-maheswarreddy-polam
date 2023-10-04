@@ -11,20 +11,28 @@
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-     
+      <style>
+        .author{
+            width: 50%;
+           margin-left: 20px;
+        }
+        .border{
+            border-radius: 50px 20px;
+        }
+    </style>
  </head>
 <body>
 
 <h1>Author entry Maheswar Reddy Polam</h1>
-
+<div class="author">
 <form>
     <label for="password">The hidden author name</label><br>
-    <input type="password" id="password" value= "Dickens" name="password">
+    <input type="password" id="password" class="border" value= "Dickens" name="password">
     <br>
-    <label for="guessAuthorname">Guess the author:</label>
-    <input type="text" id="guessAuthor" name="guessAuthor" required>
-    <br/>
-    <input  type="button" onclick= "checkAuthor()" value="Check the guess">
+    <label for="guessAuthorname">Guess the author:</label><br>
+    <input type="text" id="guessAuthor" class="border" name="guessAuthor" required>
+    <br>
+    <input  type="button" class="btn btn-success" onclick= "checkAuthor()" value="Check the guess">
   </form>
   <p id="goodCounter"></p>
   <p id="oopsCounter"></p>
