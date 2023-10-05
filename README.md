@@ -2,7 +2,8 @@
 # WebApps-F23-Assignment-6
 Introduction to Java Script and DOM <br>
 Hosted at <br>
-https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-maheswarreddy-polam/author.html <br>
-https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-maheswarreddy-polam/tips.html <br>
-https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-maheswarreddy-polam/cruise.html
+[Author]( https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-maheswarreddy-polam/author.html )<br>
+[Tip](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-maheswarreddy-polam/tips.html )
+<br>
+[Cruise](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-maheswarreddy-polam/cruise.html)
 
